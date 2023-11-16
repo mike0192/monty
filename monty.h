@@ -57,4 +57,5 @@ typedef struct instruction_s
 void pall(stack_t **head, unsigned int count);
 int execute(char *cont, stack_t **stack, unsigned int count, FILE *file);
 void pint(stack_t **head, unsigned int count);
+void free_stack(stack_t *head);
 #endif /*MONTY_H*/
