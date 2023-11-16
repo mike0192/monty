@@ -6,8 +6,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <fcntl.h>
+#include <sys/types.h>
 
-extern int bg_bandira;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -24,6 +25,22 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 /**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @cont: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *cont;
+	int lifi;
+}  bus_t;
+extern bus_t bus;
+/**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
@@ -38,3 +55,6 @@ typedef struct instruction_s
 } instruction_t;
 
 void pall(stack_t **head, unsigned int count);
+int execute(char *cont, stack_t **stack, unsigned int count, FILE *file);
+void pint(stack_t **head, unsigned int count);
+#endif /*MONTY_H*/
