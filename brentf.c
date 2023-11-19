@@ -32,7 +32,7 @@ void read_file(FILE *one)
 
 	for (line_number = 1; getline(&buffer, &len, one) != -1; line_number++)
 	{
-		format = parse_line(buffer, line_number, formy);
+		formy = sonder_son(buffer, line_number, formy);
 	}
 	free(buffer);
 }
@@ -54,7 +54,7 @@ int sonder_son(char *buffer, int line_number, int formy)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		just_go(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
@@ -123,7 +123,7 @@ void call(op_func funky, char *one, char *value, int bruh, int formy)
 	int i;
 
 	flag = 1;
-	if (strcmp(oone, "push") == 0)
+	if (strcmp(one, "push") == 0)
 	{
 		if (value != NULL && value[0] == '-')
 		{
