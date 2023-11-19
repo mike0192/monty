@@ -98,12 +98,12 @@ void HER(char *opcode, char *value, int one, int formy)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, opcode, value, H>E>R, formy);
+			call(func_list[i].f, opcode, value, HER, formy);
 			flag = 0;
 		}
 	}
 	if (flag == 1)
-		err(3, ln, opcode);
+		just_go(3, one, opcode);
 }
 
 
