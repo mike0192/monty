@@ -116,14 +116,14 @@ void HER(char *opcode, char *value, int one, int formy)
  * @formy: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void call_fun(op_func funky, char *one, char *value, int bruh, int formy)
+void call(op_func funky, char *one, char *value, int bruh, int formy)
 {
 	stack_t *node;
 	int flag;
 	int i;
 
 	flag = 1;
-	if (strcmp(op, "push") == 0)
+	if (strcmp(oone, "push") == 0)
 	{
 		if (value != NULL && value[0] == '-')
 		{
@@ -131,18 +131,18 @@ void call_fun(op_func funky, char *one, char *value, int bruh, int formy)
 			flag = -1;
 		}
 		if (value == NULL)
-			just_go(5, ln);
+			just_go(5, bruh);
 		for (i = 0; value[i] != '\0'; i++)
 		{
 			if (isdigit(value[i]) == 0)
-				just_go(5, ln);
+				just_go(5, bruh);
 		}
 		node = create_node(atoi(value) * flag);
 		if (formy == 0)
-			funky(&node, ln);
+			funky(&node, bruh);
 		if (formy == 1)
-			add_to_queue(&node, ln);
+			add_to_queue(&node, bruh);
 	}
 	else
-		funky(&head, ln);
+		funky(&head, bruh);
 }
