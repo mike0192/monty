@@ -58,7 +58,7 @@ int sonder_son(char *buffer, int line_number, int formy)
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
-		return (format);
+		return (formy);
 	value = strtok(NULL, delim);
 
 	if (strcmp(opcode, "stack") == 0)
@@ -66,8 +66,8 @@ int sonder_son(char *buffer, int line_number, int formy)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	H>E>R(opcode, value, line_number, format);
-	return (format);
+	HER(opcode, value, line_number, formy);
+	return (formy);
 }
 
 /**
@@ -88,18 +88,6 @@ void HER(char *opcode, char *value, int one, int formy)
 		{"push", add_to_stack},
 		{"pall", print_stack},
 		{"pint", print_top},
-		{"pop", pop_top},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
-		{"rotl", rotl},
-		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
