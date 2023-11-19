@@ -71,7 +71,7 @@ int sonder_son(char *buffer, int line_number, int formy)
 }
 
 /**
- * H>E>R - find the appropriate function for the opcode
+ * HER - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
  * @formy:  storage format. If 0 Nodes will be entered as a stack.
@@ -79,7 +79,7 @@ int sonder_son(char *buffer, int line_number, int formy)
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void H>E>R(char *opcode, char *value, int one, int formy)
+void HER(char *opcode, char *value, int one, int formy)
 {
 	int i;
 	int flag;

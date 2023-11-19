@@ -57,10 +57,10 @@ void poppy(stack_t **stack, unsigned int line_number)
 		home(7, line_number);
 
 	negative = *stack;
-	*stack = tmp->next;
+	*stack = negative->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
-	free(tmp);
+	free(negative);
 }
 
 /**

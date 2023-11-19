@@ -46,7 +46,7 @@ void come_home(int error_code, ...);
 void home(int error_code, ...);
 void just_go(int error_code, ...);
 void call_fun(op_func funky, char *one, char *value, int bruh, int formy);
-void H>E>R(char *opcode, char *value, int one, int formy);
+void HER(char *opcode, char *value, int one, int formy);
 void open_file(char *fufu);
 void read_file(FILE *one);
 int sonder_son(char *buffer, int line_number, int formy);

@@ -74,7 +74,7 @@ void home(int error_code, ...)
 		case 8:
 			breezy = va_arg(go, unsigned int);
 			one = va_arg(go, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", breezy, one);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
@@ -99,14 +99,14 @@ void come_home(int error_code, ...)
 	int breezy;
 
 	va_start(go, error_code);
-	brent = va_arg(go, int);
+	breezy = va_arg(go, int);
 	switch (error_code)
 	{
 		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", breezy);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", breezy);
 			break;
 		default:
 			break;
